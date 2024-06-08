@@ -6,7 +6,7 @@ We may also return errors in the JSON responses, which will follow the `message`
 
 For some endpoints, such as **oauth2**, we follow the payload format errors in the `error` and `error_description` format, where `error` is an error key and `error_description` is a description of the error.
 
-## HTTP Error Codes
+## HTTP Status Codes
 
 | Code | Name                    | Description                                                                                                |
 |------|-------------------------|------------------------------------------------------------------------------------------------------------|
