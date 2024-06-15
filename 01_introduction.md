@@ -70,7 +70,6 @@ Some endpoints or objects may contain images. These images are represented as a 
 \*The banner sizes are limited to: 500, 1000, 1500.
 
 The assets are served from `https://r.mtdv.me/assets` and the full URI for an image would be `https://r.mtdv.me/assets/{uri}`. To request a specific size of an image, you can add the `?size={size}` query parameter to the URI. The server may respond with a `400: Bad Request` if the requested size is not supported, or `404: Not Found` if the image does not exist.
-To request a specific size of an image, you can add the `?size={size}` query parameter to the uri. The server may respond with a `400: Bad Request` if the requested size is not supported, or `404: Not Found` if the image does not exist.
 
 ## CDN
 
