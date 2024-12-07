@@ -74,6 +74,7 @@ The [user.avatar](oauth2/resources#user-object) and [user.banner](oauth2/resourc
 
 
 | URI                                                                                                                                 | Description                  |
+|-------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
 | /applications/[{application.id}](oauth2/resources#application-object)/[{application.icon}](oauth2/resources#application-object).png | The icon of the application. |
 
 Application icons are hosted on `https://r.mtdv.me/assets` instead. For the full URI `https://r.mtdv.me/assets/{uri}`. To request a specific size of an image, you can add the `?size={size}` query parameter to the URI. The server may respond with a `400: Bad Request` if the requested size is not supported, or `404: Not Found` if the image does not exist.
