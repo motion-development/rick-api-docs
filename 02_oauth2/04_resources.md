@@ -24,13 +24,11 @@ User flags will contain some information about the user. We use a [bitfield](../
 
 | Flag Value | Name         | Description                                                       |
 |------------|--------------|-------------------------------------------------------------------|
-| 1<<0       | `unverified` | The user has not verified their email address                     |
-| 1<<1       | `developer`  | The user has access to create applications                        |
-| 1<<2       | `admin`      | The user is a website admin and has the red "website admin" badge |
-| 1<<3       | `banned`     | The user is banned from the website                               |
-| 1<<4       | `verified`   | The user is verified and has the blue "verified" badge            |
-| 1<<5       | `tester`     | The user has access to beta features and a "beta tester" badge    |
-| 1<<6       | `moderator`  | The user is a website moderator                                   |
+| 1<<0       | `developer ` | The user is an official developer (Red Developer Badge)           |
+| 1<<1       | `moderator`  | The user is a website moderator                                   |
+| 1<<2       | `tester`     | The user is a website tester (Testers Badge)                      |
+| 1<<3       | `verified`   | The user is verified and has blue checkmark badge                 |
+| 1<<4       | `premium`    | The user is has an active preimum subscription (Premium Badge)    |
 
 # User Links
 
