@@ -59,17 +59,24 @@ The documentation is divided into sections, each section contains a group of end
 
 # Image Formatting
 
-Some endpoints or objects may contain images. These images are represented as a hash key in the response object. The hash key is a string that represents the image. Currently, we only support the `png` format for images and the following sizes: 16, 32, 64, 128, 256, and 512. Consider the following table for the URIs for different images.
+Some endpoints or objects may contain images. These images are represented as a hash key in the response object. The hash key is a string that represents the image. Currently, we only support the `webp` format for images and the following sizes: 32, 64, 128, 256, and 512. Consider the following table for the URIs for different images.
 
 | URI                                                                                                                                 | Description                  |
 |-------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
-| /profiles/[{user.id}](oauth2/resources#user-object)/[{user.avatar}](oauth2/resources#user-object).png                               |  The avatar of the user.     |
-| /banners/[{user.id}](oauth2/resources#user-object)/[{user.banner}](oauth2/resources#user-object).png\*                              | The banner of the user.      |
+| /users/[{user.id}](oauth2/resources#user-object)/avatars/[{user.avatar}](oauth2/resources#user-object)-{size}.webp                  | The avatar of the user.      |
+| /users/[{user.id}](oauth2/resources#user-object)/banners/[{user.banner}](oauth2/resources#user-object)-{size}.webp\*                | The banner of the user.      |
+
+\*The banner sizes are limited to: 512, 1024, 2048
+
+These images are hosted on `https://assets.mtdv.me`. Simple appened the above URIs to this domain to get the webp image. Any malformed url will result into a 404 status with a text response.
+
+The [user.avatar](oauth2/resources#user-object) and [user.banner](oauth2/resources#user-object) could be set to `default` for the default banner and profile picture. The size and [user.id](oauth2/resources#user-object) does currently not effect the default images.
+
+
+| URI                                                                                                                                 | Description                  |
 | /applications/[{application.id}](oauth2/resources#application-object)/[{application.icon}](oauth2/resources#application-object).png | The icon of the application. |
 
-\*The banner sizes are limited to: 500, 1000, 1500.
-
-The assets are served from `https://r.mtdv.me/assets` and the full URI for an image would be `https://r.mtdv.me/assets/{uri}`. To request a specific size of an image, you can add the `?size={size}` query parameter to the URI. The server may respond with a `400: Bad Request` if the requested size is not supported, or `404: Not Found` if the image does not exist.
+Application icons are hosted on `https://r.mtdv.me/assets` instead. For the full URI `https://r.mtdv.me/assets/{uri}`. To request a specific size of an image, you can add the `?size={size}` query parameter to the URI. The server may respond with a `400: Bad Request` if the requested size is not supported, or `404: Not Found` if the image does not exist.
 
 ## CDN
 
